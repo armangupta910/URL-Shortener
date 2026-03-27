@@ -7,8 +7,12 @@ class Settings(BaseSettings):
     REDIS_HOST: str
     REDIS_PORT: int
 
+    REDIS_USERNAME: str | None = None
+    REDIS_PASSWORD: str | None = None
+    REDIS_SSL: bool = False 
+
     class Config:
-        env_file = ".env.local"  # default
+        env_file = ".env.local"
 
 
 env = os.getenv("ENV", "local")

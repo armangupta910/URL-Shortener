@@ -18,6 +18,6 @@ class Settings(BaseSettings):
 env = os.getenv("ENV", "local")
 
 if env == "prod":
-    settings = Settings(_env_file=".env.prod")
+    settings = Settings()
 else:
     settings = Settings(_env_file=".env.local")
